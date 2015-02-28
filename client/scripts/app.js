@@ -63,9 +63,7 @@ $(function() {
         data: { order: '-createdAt'},
         success: function(data) {
           data = JSON.parse(data);
-          console.log('chatterbox: Messages fetched');
-          console.log(typeof data);
-          console.log(data);
+          // console.log('chatterbox: Messages fetched');
           // Don't bother if we have nothing to work with
           if (!data.results || !data.results.length) { return; }
 
@@ -142,8 +140,6 @@ $(function() {
       app.$roomSelect.append($option);
     },
     addMessage: function(data) {
-      console.log("in add message");
-       console.log("data in add message: " + data);
       if (!data.roomname)
         data.roomname = 'lobby';
 

@@ -1,13 +1,13 @@
 DROP DATABASE chat;
+
 CREATE DATABASE chat;
 
 USE chat;
 
 CREATE TABLE messages (
-  username varchar(10),
+  username varchar(20),
   message varchar(140),
   roomname  varchar(30)
-
 );
 
 
