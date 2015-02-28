@@ -7,7 +7,8 @@ USE chat;
 CREATE TABLE messages (
   username varchar(20),
   message varchar(140),
-  roomname  varchar(30)
+  roomname  varchar(30),
+  time timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
 

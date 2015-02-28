@@ -4,22 +4,11 @@ var db = require('./db');
 var morgan = require('morgan');
 var parser = require('body-parser');
 var cors = require('cors');
-var handler = require('./controllers/index.js');
 // Router
 var router = require('./routes.js');
-var mysql      = require('mysql');
 
 var app = express();
 module.exports.app = app;
-
-var dbConnection = mysql.createConnection({
-  user: "root",
-  password: "",
-  database: "chat"
-});
-dbConnection.connect();
-
-//dbConnection.query('insert into messages (username, message, roomname) values ("brian", "yo bbq2", "lobby");');
 
 app.use(cors());
 // Set what we are listening on.
