@@ -1,5 +1,4 @@
 DROP DATABASE chat;
-
 CREATE DATABASE chat;
 
 USE chat;
@@ -9,11 +8,18 @@ CREATE TABLE messages (
   username varchar(20),
   message varchar(140),
   roomname  varchar(30),
-  time timestamp DEFAULT CURRENT_TIMESTAMP,
+  updatedAt timestamp DEFAULT CURRENT_TIMESTAMP,
+  createdAt timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY(objectId)
 );
 
+CREATE TABLE users (
+  username varchar(20)
+);
+
 INSERT INTO messages (username, message, roomname) VALUES ('Tony', 'Hey, it is working!', 'lobby');
+
+INSERT INTO users (username) VALUES ('Brian');
 
 /* Create other tables and define schemas for them here! */
 
