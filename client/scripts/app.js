@@ -21,11 +21,13 @@ $(function() {
       app.$chats = $('#chats');
       app.$roomSelect = $('#roomSelect');
       app.$send = $('#send');
+      app.$search = $('#search-submit');
 
       // Add listeners
       app.$main.on('click', '.username', app.addFriend);
       app.$send.on('submit', app.handleSubmit);
       app.$roomSelect.on('change', app.saveRoom);
+      app.$search.click(app.search);
 
       // Fetch previous messages
       app.startSpinner();
@@ -33,6 +35,11 @@ $(function() {
 
       // Poll for new messages
       setInterval(app.fetch, 3000);
+    },
+    search: function(){
+      console.log('lets give it a whirl');
+      var $username = $('#search-input').val();
+      $.get('/search', $username);
     },
     send: function(data) {
       app.startSpinner();
